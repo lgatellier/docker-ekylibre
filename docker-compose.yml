@@ -4,7 +4,7 @@ services:
     image: postgis/postgis:9.5-2.5-alpine
     environment:
     - POSTGRES_USER=ekylibre
-    - POSTGRES_PASSWORD=alexandre
+    - POSTGRES_PASSWORD=
     ports:
     - 5432:5432
     networks:
@@ -15,7 +15,7 @@ services:
     environment:
     - EKYLIBRE_DATABASE_HOST=db
     - EKYLIBRE_DATABASE_NAME=ekylibre
-    - EKYLIBRE_DATABASE_PASSWORD=alexandre
+    - EKYLIBRE_DATABASE_PASSWORD=
     ports:
     - 3000:3000
     depends_on:
