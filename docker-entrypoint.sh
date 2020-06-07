@@ -8,3 +8,7 @@ rake db:create db:migrate assets:precompile
 
 # Création du tenant
 rake tenant:create TENANT=production
+
+# Démarrage du serveur
+rails s -b 0.0.0.0
+

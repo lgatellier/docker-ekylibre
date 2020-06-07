@@ -12,11 +12,12 @@ services:
   ekylibre:
     image: ekylibre
     build: .
-    command: [  ]
     environment:
     - EKYLIBRE_DATABASE_HOST=db
     - EKYLIBRE_DATABASE_NAME=ekylibre
     - EKYLIBRE_DATABASE_PASSWORD=alexandre
+    ports:
+    - 3000:3000
     depends_on:
     - db
     networks:
