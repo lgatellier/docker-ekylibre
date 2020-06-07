@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    image: postgis/postgis:9.5-2.5-alpine
+    environment:
+    - POSTGRES_USER=ekylibre
+    - POSTGRES_PASSWORD=alexandre
+    ports:
+    - 5432:5432
+    networks:
+    - default
+  ekylibre:
+    image: ekylibre
+    build: .
+    command: [  ]
+    environment:
+    - EKYLIBRE_DATABASE_HOST=db
+    - EKYLIBRE_DATABASE_NAME=ekylibre
+    - EKYLIBRE_DATABASE_PASSWORD=alexandre
+    depends_on:
+    - db
+    networks:
+    - default
+
+networks:
+  default:
+    driver: bridge
+
