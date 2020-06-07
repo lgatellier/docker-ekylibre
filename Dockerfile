@@ -53,6 +53,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     apt-get install apt-transport-https && \
     curl -sS https://deb.nodesource.com/setup_12.x | bash - && \
     apt-get update && apt-get install -y nodejs yarn && \
+    yarn install --check-files && \
     chmod +x /opt/docker-entrypoint.sh
 
 CMD /opt/docker-entrypoint.sh
